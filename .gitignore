@@ -1,0 +1,7 @@
+
+# pixi environments
+.pixi
+*.egg-info
+
+# local environment variables (project data folders)
+.env

@@ -1,0 +1,18 @@
+[project]
+authors = [{name = "roelanddeheld", email = "roelandnieboer@gmail.com"}]
+name = "deltaseis-projects"
+requires-python = ">= 3.11"
+
+[tool.pixi.workspace]
+channels = ["conda-forge"]
+platforms = ["win-64"]
+
+[tool.pixi.pypi-dependencies]
+deltaseis = { git = "https://github.com/Deltares-research/DeltaSEIS.git", rev = "e0bf68598c2d3c12cbda5f098be675d543af275a" }
+
+[tool.pixi.dependencies]
+pip = ">=25.0.1,<26"
+jupyter = ">=1.1.1,<2"
+cupy = ">=13.4.1,<14"
+numpy = ">=2.2.4,<3"
+python-dotenv = ">=1.0.1,<2"
