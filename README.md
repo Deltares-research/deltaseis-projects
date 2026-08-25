@@ -1,5 +1,7 @@
 # deltaseis-projects
 
+<img src="docs/deltaseis_logo.svg" alt="DeltaSEIS logo" width="150"/>
+
 This repo keeps the [`deltaseis`](https://github.com/) library itself clean and
 generic, while storing the **project-specific processing flows** that use it
 here. Every survey/project gets its own folder under `projects/` with a script
