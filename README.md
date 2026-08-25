@@ -1,6 +1,9 @@
 # deltaseis-projects
+[![License: MIT](https://img.shields.io/pypi/l/imod)](https://choosealicense.com/licenses/mit)
+[![Lifecycle: experimental](https://lifecycle.r-lib.org/articles/figures/lifecycle-experimental.svg)](https://lifecycle.r-lib.org/articles/stages.html)
+[![Formatting: ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/charliermarsh/ruff)
 
-<img src="docs/deltaseis_logo.svg" alt="DeltaSEIS logo" width="150"/>
+<img src="docs/deltaseis_logo.svg" alt="DeltaSEIS logo" width="100" align="left">
 
 This repo keeps the [`deltaseis`](https://github.com/) library itself clean and
 generic, while storing the **project-specific processing flows** that use it
