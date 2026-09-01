@@ -4,7 +4,7 @@ from pathlib import Path
 import numpy as np
 from dotenv import load_dotenv
 
-from deltaseis import Segy_edit, Seismic, load_or_extract_wavelet
+from deltaseis import Segy_edit, Seismic, extract_wavelet_from_segy
 
 load_dotenv()
 folder = Path(os.environ["ARK_SILAS_FOLDER"])
@@ -13,10 +13,10 @@ output_suffix = "_trace_averaging1_decon"
 segy_files = sorted(f for f in folder.iterdir()
                     if f.suffix in ('.sgy', '.segy') and not f.stem.endswith(output_suffix))
 
-# picked by eye on one representative file; delete the wavelet files to re-pick
+# picked by eye on one representative file
 wavelet_source = folder / "Silas_center_line_0822121152SG132.sgy"
-wavelet, wavelet_fs = load_or_extract_wavelet(
-    folder / "signature_wavelet.npy", wavelet_source, 13241, 7.35, 7.6
+wavelet, wavelet_fs = extract_wavelet_from_segy(
+    wavelet_source, 13241, 7.35, 7.6
 )
 
 for i, segy_file in enumerate(segy_files, start=1):
