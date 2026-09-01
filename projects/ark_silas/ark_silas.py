@@ -14,8 +14,9 @@ segy_files = sorted(f for f in folder.iterdir()
                     if f.suffix in ('.sgy', '.segy') and not f.stem.endswith(output_suffix))
 
 # picked by eye on one representative file; delete the wavelet files to re-pick
+wavelet_source = folder / "Silas_center_line_0822121152SG132.sgy"
 wavelet, wavelet_fs = load_or_extract_wavelet(
-    folder / "signature_wavelet.npy", segy_files[0], 13241, 7.35, 7.6
+    folder / "signature_wavelet.npy", wavelet_source, 13241, 7.35, 7.6
 )
 
 for i, segy_file in enumerate(segy_files, start=1):
