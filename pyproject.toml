@@ -8,7 +8,7 @@ channels = ["conda-forge"]
 platforms = ["win-64"]
 
 [tool.pixi.pypi-dependencies]
-deltaseis = { git = "https://github.com/Deltares-research/DeltaSEIS.git", rev = "8a09cf1c5da9a66674c8c994e20e23988e1e405d" }
+deltaseis = { git = "https://github.com/Deltares-research/DeltaSEIS.git", rev = "7284ce51671a3cb66233c6a8dbf63edcf9ff03d0" }
 
 [tool.pixi.dependencies]
 pip = ">=25.0.1,<26"
