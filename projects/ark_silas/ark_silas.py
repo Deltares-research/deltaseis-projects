@@ -9,9 +9,10 @@ from deltaseis import Segy_edit, Seismic, extract_wavelet_from_segy
 load_dotenv()
 folder = Path(os.environ["ARK_SILAS_FOLDER"])
 
-output_suffix = "_trace_averaging1_decon"
+processed_suffix = "_trace_averaging1_decon"
+output_suffix = f"_heave_corrected{processed_suffix}"
 segy_files = sorted(f for f in folder.iterdir()
-                    if f.suffix in ('.sgy', '.segy') and not f.stem.endswith(output_suffix))
+                    if f.suffix in ('.sgy', '.segy') and not f.stem.endswith(processed_suffix))
 
 # picked by eye on one representative file
 wavelet_source = folder / "Silas_center_line_0822121152SG132.sgy"
@@ -23,6 +24,13 @@ for i, segy_file in enumerate(segy_files, start=1):
 
     print(f"{i}/{len(segy_files)}: processing {segy_file.stem}")
     edit = Segy_edit(segy_file)
+
+    edit.get_seabed_pick(10, 100, 9, 3, truncate=10)
+    edit.filter_horizon_savgol("seabed_pick", "seabed_pick_savgol", 101, 4)
+    edit.calculate_difference_horizon(
+        "seabed_pick_savgol", "seabed_pick", difference_horizon_name="heave"
+    )
+    edit.vertical_trace_corrections(edit.heave)
 
     dx_mean = edit.factor * edit.shot_point_interval.mean()
     fs = edit.sampling_rate
