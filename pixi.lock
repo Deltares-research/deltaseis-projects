@@ -190,7 +190,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/e7/05/c19819d5e3d95294a6f5947fb9b9629efb316b96de511b418c53d245aae6/cycler-0.12.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/35/40/c17d731af4ddbf6dede1f1acb09e6335c2587e8b73b3d4742f3f9c6996d3/cyclopts-4.23.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/f8/3a/4fc99e788bcfa1b3b3f21abf57da45898d807d007e7f6fd1c7300904eb70/dask-2026.8.0-py3-none-any.whl
-      - pypi: git+https://github.com/Deltares-research/DeltaSEIS.git?rev=e0bf68598c2d3c12cbda5f098be675d543af275a#e0bf68598c2d3c12cbda5f098be675d543af275a
+      - pypi: git+https://github.com/Deltares-research/DeltaSEIS.git?rev=8a09cf1c5da9a66674c8c994e20e23988e1e405d#8a09cf1c5da9a66674c8c994e20e23988e1e405d
       - pypi: https://files.pythonhosted.org/packages/28/d4/017e2d39d797eaa38a52b4459c8bea875d5e0ada335a62aafe98193041a6/distributed-2026.8.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a2/55/8f8cab2afd404cf578136ef2cc5dfb50baa1761b68c9da1fb1e4eed343c9/docopt-0.6.2.tar.gz
       - pypi: https://files.pythonhosted.org/packages/20/e3/493d0a477e0b15a77d1e92d97a4447bde79280082b507bb57f3e68e4e064/docopt_subcommands-4.0.0-py2.py3-none-any.whl
@@ -819,7 +819,7 @@ packages:
   - pkg:pypi/defusedxml?source=hash-mapping
   size: 24062
   timestamp: 1615232388757
-- pypi: git+https://github.com/Deltares-research/DeltaSEIS.git?rev=e0bf68598c2d3c12cbda5f098be675d543af275a#e0bf68598c2d3c12cbda5f098be675d543af275a
+- pypi: git+https://github.com/Deltares-research/DeltaSEIS.git?rev=8a09cf1c5da9a66674c8c994e20e23988e1e405d#8a09cf1c5da9a66674c8c994e20e23988e1e405d
   name: deltaseis
   version: 0.0.5
   requires_dist:
