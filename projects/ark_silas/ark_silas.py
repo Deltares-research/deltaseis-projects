@@ -8,11 +8,11 @@ from deltaseis import Segy_edit, Seismic, extract_wavelet_from_segy
 
 load_dotenv()
 folder = Path(os.environ["ARK_SILAS_FOLDER"])
+output_folder = folder / "heave_corr_traceav1_decon"
+output_folder.mkdir(exist_ok=True)
 
-output_suffix = "_heave_corrected_trace_averaging1_decon"
 segy_files = sorted(f for f in folder.iterdir()
-                    if f.suffix in ('.sgy', '.segy')
-                    and "_trace_averaging1_decon" not in f.stem)
+                    if f.suffix in ('.sgy', '.segy'))
 
 # picked by eye on one representative file
 wavelet_source = folder / "Silas_center_line_0822121152SG132.sgy"
@@ -47,5 +47,4 @@ for i, segy_file in enumerate(segy_files, start=1):
     edit.trace_data = seis.data
 
     # write to SEG-Y
-    processed_file = segy_file.with_stem(f"{segy_file.stem}{output_suffix}")
-    edit.write(processed_file)
+    edit.write(output_folder / segy_file.name)
