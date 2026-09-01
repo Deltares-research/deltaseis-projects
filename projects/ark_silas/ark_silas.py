@@ -42,6 +42,7 @@ for i, segy_file in enumerate(segy_files, start=1):
     # one wavelet for the whole survey, so amplitudes stay comparable between files
     seis.signature_deconvolution(wavelet, wavelet_fs=wavelet_fs, method='wiener',
                                  epsilon=0.01, prewhiten=False)
+    seis.top_mute(edit.seabed_pick_savgol, shift_ms=-0.1, taper_ms=0.2)
     seis.trace_averaging(1)
     seis.convert_to_trace_data(edit.data_sample_format)
     edit.trace_data = seis.data
